@@ -6,4 +6,5 @@ coverage/
 *.log
 .env*
 !.env.example
-src/public/
+*.apk
+/public/*.apk
