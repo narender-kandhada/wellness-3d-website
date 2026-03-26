@@ -1,13 +1,49 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary: #446749;
+  --color-primary-container: #c5edc6;
+  --color-on-primary-container: #37593c;
+  
+  --color-secondary: #635f55;
+  --color-secondary-container: #e8e2d6;
+  --color-on-secondary-container: #555148;
+
+  --color-tertiary: #2c6864;
+  --color-tertiary-container: #b9f7f1;
+  --color-on-tertiary-container: #22605c;
+
+  --color-surface: #fbf9f5;
+  --color-surface-container-low: #f5f4ef;
+  --color-surface-container-high: #e9e8e3;
+  --color-surface-container-highest: #e3e3dc;
+  
+  --color-on-surface: #31332f;
+  --color-on-surface-variant: #5e605b;
+
+  --color-error: #a73b21;
+  --color-error-container: #fd795a;
+  --color-on-error: #fff7f6;
+
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+}
 
 @layer base {
-	html {
-		scroll-behavior: smooth;
-	}
+  body {
+    @apply bg-surface text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container;
+  }
+}
 
-	body {
-		@apply bg-[#f7f6f3] text-[#1f2c23] antialiased;
-	}
+.hero-gradient {
+  background: radial-gradient(circle at top right, #c5edc6 0%, transparent 40%),
+              radial-gradient(circle at bottom left, #b9f7f1 0%, transparent 40%);
+}
+
+.glass-header {
+  background: rgba(251, 249, 245, 0.8);
+  backdrop-filter: blur(20px);
 }
