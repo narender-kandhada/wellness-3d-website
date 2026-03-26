@@ -463,7 +463,7 @@ export default function App() {
               <p className="text-xl text-on-surface-variant">No pressure. Just support. Join thousands who have found their breathing space.</p>
               <div className="pt-8 flex flex-col sm:flex-row justify-center gap-6 items-center">
                 <a 
-                  href="/app.apk" 
+                  href="https://github.com/narender-kandhada/wellness-3d-website/releases/latest/download/InnerCircle.apk" 
                   download="InnerCircle.apk"
                   className="bg-primary text-surface px-10 py-5 rounded-full text-xl font-bold hover:shadow-2xl hover:shadow-primary/40 transition-all flex items-center justify-center gap-3 group"
                 >
