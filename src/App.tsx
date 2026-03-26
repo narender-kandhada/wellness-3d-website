@@ -18,9 +18,20 @@ import {
   BrainCircuit, 
   HeartPulse,
   AlertCircle,
-  ArrowRight
+  ArrowRight,
+  Trash2,
+  Lock,
+  EyeOff,
+  Shield,
+  Wind
 } from 'lucide-react';
 import { cn } from './lib/utils';
+
+// Import images from assets folder
+import chatImage from './assets/chat.png';
+import dashboardImage from './assets/dashboard.png';
+import insightsImage from './assets/insights.png';
+import supporImage from './assets/support.png';
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,7 +56,6 @@ export default function App() {
           <div className="text-2xl font-bold text-primary tracking-tight font-headline">
             InnerCircle
           </div>
-          
           <div className="hidden md:flex items-center gap-8">
             {['Features', 'Support', 'Privacy', 'Download'].map((item) => (
               <a 
@@ -60,9 +70,9 @@ export default function App() {
           </div>
 
           <div className="flex items-center gap-4">
-            <button className="hidden sm:block bg-primary text-surface px-6 py-2.5 rounded-full font-medium text-sm hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-95">
+            <a href="#download" className="hidden sm:block bg-primary text-surface px-6 py-2.5 rounded-full font-medium text-sm hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-95">
               Get Started
-            </button>
+            </a>
             <button 
               className="md:hidden p-2 text-on-surface"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -91,9 +101,9 @@ export default function App() {
                   {item}
                 </a>
               ))}
-              <button className="w-full bg-primary text-surface py-4 rounded-full font-bold">
+              <a href="#download" className="w-full bg-primary text-surface py-4 rounded-full font-bold text-center block">
                 Get Started
-              </button>
+              </a>
             </motion.div>
           )}
         </AnimatePresence>
@@ -139,9 +149,8 @@ export default function App() {
               <div className="absolute inset-0 bg-primary/5 rounded-full blur-[100px]" />
               <img 
                 className="relative z-10 w-full max-w-[320px] drop-shadow-2xl" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUjHKQ-Bzsl-OD0Ws2pHRmdBRNoPtNfXTtAY-Z8BuPz-_9XoIuqYn5objXsPNJ4frMd5BSnQa8tTRsIj0a46Nor-MR3tya2nGFS89hj7lQe5bjuoGxQ05bKWzPQCEqAudXo0YWdOfhsyPkEaJAziFZUpiWa7bxTT_lWHrg1bEVlj1SwkvhEvQpMGlA1s90Xx7EJk4MVDYiYkN2yq_TLv5c2R_ymT4VfvoEhv6L4waUIaZrKCPRlrQMAPj-370Syro2VkfXKu31hSgx" 
+                src={dashboardImage} 
                 alt="InnerCircle App Interface"
-                referrerPolicy="no-referrer"
               />
             </motion.div>
           </div>
@@ -177,9 +186,8 @@ export default function App() {
               >
                 <img 
                   className="w-full max-w-sm transform hover:scale-105 transition-transform duration-700" 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbgAi56z2QGcvhctEqe6CanYKHdvI6k53t1hTjaeUIr8IOvq43zmVi4p1qt-_EjGHbv_opYpxic7A4935VSMAY5t5E9ZAnwIYTyd0xMbdUnJrw_-F-jZPBZFdUOTGl1MSm68DWjuGA2EFzTUaVJxxS2CmrE1GiZhDhM1TVSygamDsY8iv5d1wU5aJGYyZULaT--5UoyhgSaFmPUt4dAvFn6rKWhvAxwHILxLRGBVNvmQjQCNyirPfr9Sje2FKDmxzFm5dvNkF3MAeR" 
+                  src={dashboardImage} 
                   alt="Mood Analytics Dashboard"
-                  referrerPolicy="no-referrer"
                 />
               </motion.div>
             </div>
@@ -215,9 +223,8 @@ export default function App() {
               >
                 <img 
                   className="w-full h-auto" 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfkmmT5VSCP6qn3g8_zT0shn50QnZw7Elbf40D-3epL2B6WhN5sZS2eNQVsDm5J35cj49UQ9EdFbvgHSY9HHp3_bgKBoDxmGillus7CbRTKt7O4-HH8IlycW4646EKEMND3met5bWNLO8csagJbFFxf1DFzJWMLkXV0GGv4m_jERIR-GStc-ST2kPBQ2SXc3zvSrokI3igSglm7KvumDgatbs04Mn6NWjZPhOQfX0OKx5WxztEdwMS0bFlxBw59IrvbyRQB4iwfDBT" 
+                  src={chatImage} 
                   alt="AI Chat Interface"
-                  referrerPolicy="no-referrer"
                 />
               </motion.div>
             </div>
@@ -252,19 +259,13 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Sleep Sounds */}
+              {/* Meditation Exercises */}
               <div className="bg-tertiary-container rounded-3xl p-8 flex flex-col justify-between hover:shadow-md transition-all">
                 <div className="space-y-4">
-                  <Moon className="text-on-tertiary-container w-10 h-10" />
-                  <h3 className="text-2xl font-bold text-on-tertiary-container">Sleep Sounds</h3>
-                  <p className="text-on-tertiary-container/80 text-sm">Curated soundscapes to help you drift off into restorative rest.</p>
+                  <Wind className="text-on-tertiary-container w-10 h-10" />
+                  <h3 className="text-2xl font-bold text-on-tertiary-container">Meditation Exercises</h3>
+                  <p className="text-on-tertiary-container/80 text-sm">Guided meditations to calm your mind and find inner peace throughout your day.</p>
                 </div>
-                <img 
-                  className="mt-4 rounded-2xl h-32 object-cover" 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQBsl31UOt-nNwfuleTr_v5Az-z478kJDgHIM51AcWRaRufTgmTUWsPECapL4B8dRCm2WPQ6SBbw4CbinHxdjUT7iMymF91KFU0IXA4cHSkhhLbIP_3bdA3gZwQpQWykDjvPmAZM5jzlROPnUlT0jR1KJVdaBakhH9KG9XfyfDNAJMtmIJdU-P3Z3KyffgxGWywMFp17sjsy6fMR7gMXQg4OSLxFgta9iPHc0YqFLnJ066n1QfHLEF2T7IfVSX1VS92ba4nGmNuTwy" 
-                  alt="Soothing Sleep Sounds"
-                  referrerPolicy="no-referrer"
-                />
               </div>
 
               {/* Journaling */}
@@ -311,9 +312,8 @@ export default function App() {
                 initial={{ x: -100, opacity: 0 }}
                 viewport={{ once: true }}
                 className="relative z-10 w-full max-w-md drop-shadow-xl mx-auto" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq9Kspn1uM7omP1mylAaASkyJNRpF9HF3OyXH1NMkMzFsMm8MUBu7ui_6mNVtZJSnB6pE9nT_lwZ6Jmdj4gDEDb2d8Ai1y4bgYYTTGlXPeFFaD7Kp9cW6PIFpCPKepL5KxzXewxAiMkR13YZMZcrKAozni1xyLQF9OYqd3nCjvv1hz9zjDOc6mfc_I8hoUqd0fsdvCVu0vL7mSDmHk-tpVnSFmdpx0pb4tfz5dqNmPUaiyKOAQ4dvqncdTM2Nm3wdrlK5yW0rX3snU" 
+                src={insightsImage} 
                 alt="Progress Tracking"
-                referrerPolicy="no-referrer"
               />
             </div>
             <div className="space-y-6 order-1 md:order-2">
@@ -346,23 +346,112 @@ export default function App() {
         </section>
 
         {/* Crisis Support */}
-        <section id="support" className="py-24 px-6 bg-error-container/10">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-error-container text-white mb-4 shadow-lg shadow-error/20">
-              <AlertCircle className="w-8 h-8" />
+        <section id="support" className="py-24 px-6 bg-surface-container-low overflow-hidden">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <motion.div 
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 50 }}
+              viewport={{ once: true }}
+              className="bg-surface-container-highest rounded-3xl p-8 flex items-center justify-center min-h-[500px] overflow-hidden order-2 md:order-1"
+            >
+              <img 
+                className="w-full max-w-sm transform hover:scale-105 transition-transform duration-700" 
+                src={supporImage} 
+                alt="Support and Well-being Resources"
+              />
+            </motion.div>
+            <div className="space-y-6 order-1 md:order-2">
+              <h2 className="text-4xl md:text-5xl font-bold leading-tight">You don't have to go through this alone</h2>
+              <p className="text-lg text-on-surface-variant leading-relaxed">
+                If you're going through a difficult time, reaching out is a sign of strength. Our supportive community and resources are here to help you find your way.
+              </p>
+              <div className="space-y-6 pt-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-primary-container rounded-2xl flex items-center justify-center">
+                    <HeartPulse className="text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold">Weekly Check-ins</h4>
+                    <p className="text-sm text-on-surface-variant">Regular touchpoints to support your emotional well-being journey.</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-tertiary-container rounded-2xl flex items-center justify-center">
+                    <BrainCircuit className="text-tertiary" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold">Personalized Support</h4>
+                    <p className="text-sm text-on-surface-variant">Resources tailored to your unique challenges and goals.</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <h2 className="text-3xl font-bold">Help is always within reach.</h2>
-            <p className="text-lg text-on-surface-variant">
-              If you are experiencing a mental health emergency, our app provides immediate one-tap access to local helplines and crisis support services. You are never alone.
-            </p>
-            <div className="flex flex-col md:flex-row justify-center gap-4">
-              <button className="bg-error text-on-error px-8 py-4 rounded-full font-bold shadow-lg hover:shadow-error/30 transition-all active:scale-95">
-                Get Immediate Help
-              </button>
-              <button className="bg-surface text-on-surface px-8 py-4 rounded-full font-bold shadow-sm hover:bg-surface-container-high transition-all">
-                Find a Therapist
-              </button>
+          </div>
+        </section>
+
+        {/* Privacy & Trust */}
+        <section id="privacy" className="py-24 px-6">
+          <div className="max-w-6xl mx-auto">
+            {/* Section Header */}
+            <div className="text-center mb-16 space-y-4">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <Shield className="w-8 h-8 text-primary" />
+                <h2 className="text-4xl md:text-5xl font-bold">Privacy & Trust</h2>
+              </div>
+              <p className="text-lg text-on-surface-variant max-w-2xl mx-auto">Your safety and privacy matter to us</p>
             </div>
+
+            {/* Privacy Features Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+              <div className="bg-surface rounded-3xl p-8 shadow-sm border border-surface-container-high hover:shadow-md transition-all">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center flex-shrink-0">
+                    <Lock className="text-primary w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold">Your data belongs to you</h3>
+                  </div>
+                </div>
+                <p className="text-on-surface-variant leading-relaxed">Everything you share stays on your device. We never sell or share your personal information with anyone.</p>
+              </div>
+
+              <div className="bg-surface rounded-3xl p-8 shadow-sm border border-surface-container-high hover:shadow-md transition-all">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center flex-shrink-0">
+                    <Trash2 className="text-secondary w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold">Delete anytime</h3>
+                  </div>
+                </div>
+                <p className="text-on-surface-variant leading-relaxed">Full control. Delete individual messages or entire conversations whenever you want.</p>
+              </div>
+
+              <div className="bg-surface rounded-3xl p-8 shadow-sm border border-surface-container-high hover:shadow-md transition-all">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-tertiary-container flex items-center justify-center flex-shrink-0">
+                    <ShieldCheck className="text-tertiary w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold">No sharing without consent</h3>
+                  </div>
+                </div>
+                <p className="text-on-surface-variant leading-relaxed">Your conversations are private. Never shared with third parties without your explicit permission.</p>
+              </div>
+
+              <div className="bg-surface rounded-3xl p-8 shadow-sm border border-surface-container-high hover:shadow-md transition-all">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center flex-shrink-0">
+                    <EyeOff className="text-primary w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold">Anonymous by design</h3>
+                  </div>
+                </div>
+                <p className="text-on-surface-variant leading-relaxed">No email, no phone number, no tracking. Complete anonymity while you use InnerCircle.</p>
+              </div>
+            </div>
+
           </div>
         </section>
 
@@ -373,24 +462,59 @@ export default function App() {
               <h2 className="text-4xl md:text-5xl font-extrabold text-on-surface">Start your wellness journey today</h2>
               <p className="text-xl text-on-surface-variant">No pressure. Just support. Join thousands who have found their breathing space.</p>
               <div className="pt-8 flex flex-col sm:flex-row justify-center gap-6 items-center">
-                <button className="bg-primary text-surface px-10 py-5 rounded-full text-xl font-bold hover:shadow-2xl hover:shadow-primary/40 transition-all flex items-center justify-center gap-3 group">
+                <a 
+                  href="/app.apk" 
+                  download="InnerCircle.apk"
+                  className="bg-primary text-surface px-10 py-5 rounded-full text-xl font-bold hover:shadow-2xl hover:shadow-primary/40 transition-all flex items-center justify-center gap-3 group"
+                >
                   <Download className="w-6 h-6 group-hover:translate-y-1 transition-transform" />
                   Download APK
-                </button>
-                <div className="flex items-center gap-4 text-secondary font-medium">
-                  <div className="flex -space-x-3">
-                    {[1, 2, 3].map((i) => (
-                      <img 
-                        key={i}
-                        className="w-10 h-10 rounded-full border-2 border-surface" 
-                        src={`https://picsum.photos/seed/user${i}/100/100`} 
-                        alt="User"
-                        referrerPolicy="no-referrer"
-                      />
-                    ))}
-                  </div>
-                  <span>50k+ Happy Users</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Download Procedure Steps */}
+        <section className="py-24 px-6 bg-surface-container-low">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16 space-y-4">
+              <h2 className="text-4xl font-bold">Installation Steps</h2>
+              <p className="text-on-surface-variant max-w-2xl mx-auto">Follow these simple steps to get InnerCircle on your device</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Step 1: Download */}
+              <div className="bg-surface rounded-3xl p-8 shadow-sm border border-surface-container-high hover:shadow-md transition-all">
+                <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-primary-container mb-6">
+                  <span className="text-2xl font-bold text-primary">1</span>
                 </div>
+                <h3 className="text-2xl font-bold mb-4">Download</h3>
+                <p className="text-on-surface-variant leading-relaxed">
+                  Tap the "Download APK" button above to download the InnerCircle application file to your device.
+                </p>
+              </div>
+
+              {/* Step 2: Enable Unknown Sources */}
+              <div className="bg-surface rounded-3xl p-8 shadow-sm border border-surface-container-high hover:shadow-md transition-all">
+                <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-secondary-container mb-6">
+                  <span className="text-2xl font-bold text-secondary">2</span>
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Enable Unknown Sources</h3>
+                <p className="text-on-surface-variant leading-relaxed">
+                  Go to Settings → Security → Unknown Sources and enable it to allow installation of apps from outside the Play Store.
+                </p>
+              </div>
+
+              {/* Step 3: Install APK */}
+              <div className="bg-surface rounded-3xl p-8 shadow-sm border border-surface-container-high hover:shadow-md transition-all">
+                <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-tertiary-container mb-6">
+                  <span className="text-2xl font-bold text-tertiary">3</span>
+                </div>
+                <h3 className="text-2xl font-bold mb-4">Install APK</h3>
+                <p className="text-on-surface-variant leading-relaxed">
+                  Open the downloaded file and tap "Install" to complete the setup. Once installed, you can start your wellness journey!
+                </p>
               </div>
             </div>
           </div>
