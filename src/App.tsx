@@ -130,10 +130,14 @@ export default function App() {
                 A gentle space designed for your emotional well-being. Using mindful AI to help you navigate life's ups and downs.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
-                <button className="bg-primary text-surface px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl hover:shadow-primary/30 transition-all flex items-center gap-2 group">
+                <a 
+                  href="https://github.com/narender-kandhada/wellness-3d-website/releases/latest/download/InnerCircle.apk"
+                  download="InnerCircle.apk"
+                  className="bg-primary text-surface px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl hover:shadow-primary/30 transition-all flex items-center gap-2 group"
+                >
                   <Download className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" />
                   Download App
-                </button>
+                </a>
                 <button className="bg-surface-container-high text-on-surface px-8 py-4 rounded-full text-lg font-semibold hover:bg-surface-container-highest transition-all">
                   Learn More
                 </button>
