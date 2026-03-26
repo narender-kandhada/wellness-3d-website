@@ -1,9 +1,5 @@
 # InnerCircle - Your AI Wellness Companion
 
-<div align="center">
-<img width="1200" height="475" alt="InnerCircle Banner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
-
 A modern, responsive landing page for InnerCircle, your AI-powered wellness companion. Built with cutting-edge web technologies to provide an exceptional user experience.
 
 ## ✨ Features
