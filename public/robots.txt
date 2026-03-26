@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
 
+# Block common non-public paths if they are added later
+Disallow: /admin/
+Disallow: /private/
+Disallow: /internal/
+
+# Sitemap location
 Sitemap: https://innercicle-web.vercel.app/sitemap.xml
