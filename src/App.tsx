@@ -531,7 +531,7 @@ export default function App() {
           <div className="flex flex-col items-center md:items-start gap-4">
             <div className="text-xl font-bold text-primary">InnerCircle</div>
             <p className="text-xs text-on-surface-variant max-w-xs text-center md:text-left">
-              © 2024 InnerCircle. Your breathing space for digital wellness.
+              © 2026 InnerCircle. Your breathing space for digital wellness.
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-8">
