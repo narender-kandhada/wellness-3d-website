@@ -160,7 +160,7 @@ export default function App() {
             >
               <div className="absolute inset-0 bg-primary/5 rounded-full blur-[1px]" />
               <img 
-                className="relative z-10 w-full max-w-[700px] drop-shadow-2xl" 
+                className="relative z-10 w-full max-w-[550px] drop-shadow-2xl" 
                 src={heroImage} 
                 alt="InnerCircle App Interface"
               />
