@@ -3,10 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
-  Download, 
   Menu, 
   X, 
   Smile, 
@@ -26,16 +25,21 @@ import {
   Wind
 } from 'lucide-react';
 import { cn } from './lib/utils';
+import DownloadIcon from './icons/download-icon';
 
 // Import images from assets folder
 import chatImage from './assets/chat.png';
 import dashboardImage from './assets/dashboard.png';
+import heroImage from './assets/hero.png';
 import insightsImage from './assets/insights.png';
 import supporImage from './assets/support.png';
+
 
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const downloadIconRef1 = useRef(null);
+  const downloadIconRef2 = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -130,15 +134,19 @@ export default function App() {
                 A gentle space designed for your emotional well-being. Using mindful AI to help you navigate life's ups and downs.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
-                <a 
+                <motion.a 
                   href="https://github.com/narender-kandhada/wellness-3d-website/releases/latest/download/InnerCircle.apk"
                   download="InnerCircle.apk"
+                  onHoverStart={() => downloadIconRef1.current?.startAnimation()}
+                  onHoverEnd={() => downloadIconRef1.current?.stopAnimation()}
                   className="bg-primary text-surface px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl hover:shadow-primary/30 transition-all flex items-center gap-2 group"
                 >
-                  <Download className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" />
+                  <DownloadIcon ref={downloadIconRef1} size={20} className="group-hover:translate-y-0.5 transition-transform" />
                   Download App
-                </a>
-                <button className="bg-surface-container-high text-on-surface px-8 py-4 rounded-full text-lg font-semibold hover:bg-surface-container-highest transition-all">
+                </motion.a>
+                <button 
+                  onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="bg-surface-container-high text-on-surface px-8 py-4 rounded-full text-lg font-semibold hover:bg-surface-container-highest transition-all">
                   Learn More
                 </button>
               </div>
@@ -150,10 +158,10 @@ export default function App() {
               transition={{ duration: 1, delay: 0.2 }}
               className="relative flex justify-center"
             >
-              <div className="absolute inset-0 bg-primary/5 rounded-full blur-[100px]" />
+              <div className="absolute inset-0 bg-primary/5 rounded-full blur-[1px]" />
               <img 
-                className="relative z-10 w-full max-w-[320px] drop-shadow-2xl" 
-                src={dashboardImage} 
+                className="relative z-10 w-full max-w-[700px] drop-shadow-2xl" 
+                src={heroImage} 
                 alt="InnerCircle App Interface"
               />
             </motion.div>
@@ -466,14 +474,16 @@ export default function App() {
               <h2 className="text-4xl md:text-5xl font-extrabold text-on-surface">Start your wellness journey today</h2>
               <p className="text-xl text-on-surface-variant">No pressure. Just support. Join thousands who have found their breathing space.</p>
               <div className="pt-8 flex flex-col sm:flex-row justify-center gap-6 items-center">
-                <a 
+                <motion.a 
                   href="https://github.com/narender-kandhada/wellness-3d-website/releases/latest/download/InnerCircle.apk" 
                   download="InnerCircle.apk"
+                  onHoverStart={() => downloadIconRef2.current?.startAnimation()}
+                  onHoverEnd={() => downloadIconRef2.current?.stopAnimation()}
                   className="bg-primary text-surface px-10 py-5 rounded-full text-xl font-bold hover:shadow-2xl hover:shadow-primary/40 transition-all flex items-center justify-center gap-3 group"
                 >
-                  <Download className="w-6 h-6 group-hover:translate-y-1 transition-transform" />
+                  <DownloadIcon ref={downloadIconRef2} size={24} className="group-hover:translate-y-1 transition-transform" />
                   Download APK
-                </a>
+                </motion.a>
               </div>
             </div>
           </div>
